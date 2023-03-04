@@ -26,7 +26,7 @@ class App extends Component{
   constructor(){
     super();
     console.log(this.props);
-    this.s tate={
+    this.state={
       clor:"red"
     }
     console.log("constructor methiod");
