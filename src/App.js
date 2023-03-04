@@ -26,9 +26,9 @@ class App extends Component{
   constructor(){
     super();
     console.log(this.props);
-    this.setState({
+    this.s tate={
       clor:"red"
-    })
+    }
     console.log("constructor methiod");
   }
   static getDerivedStateFromProps()
