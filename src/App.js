@@ -2,79 +2,40 @@ import logo from './logo.svg';
 import './App.css';
 import { Component } from 'react';
 import { render } from '@testing-library/react';
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-class App extends Component{
-  constructor(){
-    super();
-    console.log(this.props);
-    this.state={
-      clor:"red"
-    }
-    console.log("constructor methiod");
-  }
-  static getDerivedStateFromProps()
-  {
-    console.log("getDerivedStateFromnProps called");
-  }
-  shouldComponentUpdate(){
-    console.log("shouldcomponetupdate");
-    return true
-  }
-  getSnapshotBeforeUpdate(){
-    console.log("getSnapshotBeforeUpdate");
-  }
-  componentDidUpdate(){
-    console.log("componentDidUpdate");
-  }
-  componentWillUnmount(){
-    console.log("componentWillUnmount");
-  }
-  componentDidMount(){
-    console.log("componentrDidMount called");
-    setTimeout(()=>{
-      this.setState({...this.state, color:"yellow"})
-    },15000)
-  }
-render(){
-  console.log("render method");
-return (
+import { useState,useEffect } from 'react';
+import Profile from './Profile';
+
+function App() {
+  // const[counter,setCounter]=useState(0)
+  // useEffect(()=>{
+  //   console.log("use effect called");
+  //   const timer=setTimeout(() => {
+  //     setCounter(counter+1)
+  //   },15000);
+  //   return()=>{
+  //     clearTimeout(timer)
+  //     console.log("unmounting ");
+  //   }
+  // },[counter])
+  return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+       <header className="App-header">
+        <h1>GREATEST SCIENTISTS</h1> 
+  {/* //       <img src={logo} className="App-logo" alt="logo" /> */}
+  {/* //       <p> */}
+  {/* //         Edit <code>src/App.js</code> and save to reload. */}
+  {/* //       </p> */}
+  {/* //       <a */}
+  {/* //         className="App-link"
+  //         href="https://reactjs.org"
+  //         target="_blank"
+  //         rel="noopener noreferrer"
+  {/* //       > */}
+  {/* //         Learn React */} 
+  {/* //       </a> */}
+    <Profile/>
       </header>
     </div>
   );
 }
-}
-
-export default App;
+export default App; 
