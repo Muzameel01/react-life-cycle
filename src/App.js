@@ -5,8 +5,15 @@ import { render } from '@testing-library/react';
 import { useState,useEffect } from 'react';
 import Profile from './Profile';
 import Avatar from './Avtar';
+import AvatarProfile from './AvtarProfile';
 
 function App() {
+  const[changeSize,setChangeSize]=useState(20)
+  useEffect(()=>{
+    setTimeout(()=>{
+      setChangeSize(300);
+    },7000)
+  },[])
   // const[counter,setCounter]=useState(0)
   // useEffect(()=>{
   //   console.log("use effect called");
@@ -35,23 +42,23 @@ function App() {
   {/* //         Learn React */} 
   {/* //       </a> */}
     {/* <Profile/> */}
-    <Avatar size={100
+    <AvatarProfile size={100
   } person={{name:"XYZ", imageId:"1bX5QH6"}}/>  
-     <Avatar
-        size={100}
+     <AvatarProfile
+        size={changeSize}
         person={{ 
           name: 'Katsuko Saruhashi', 
           imageId: 'YfeOqp2'
         }}
       />
-      <Avatar
+      <AvatarProfile
         size={80}
         person={{
           name: 'Aklilu Lemma', 
           imageId: 'OKS67lh'
         }}
       />
-      <Avatar
+      <AvatarProfile
         size={50}
         person={{ 
           name: 'Lin Lanying',
